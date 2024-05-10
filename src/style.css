@@ -15,6 +15,7 @@ body {
     background-color: #ffffff47;
     backdrop-filter: blur(20px);
     border-radius: 10px;
+    box-shadow: 0 0 15px rgba(54, 54, 54, 0.69);
 }
 .container p{
     text-align: center;
