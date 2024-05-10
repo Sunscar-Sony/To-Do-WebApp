@@ -49,6 +49,7 @@ const App = () => {
         ))}
         <AddTodo isAddTodoEnabled={isAddTodoEnabled} onSaveTodo={handleAddTodo} onDiscardTodo={handleDiscardTodo}></AddTodo>
         <button className="todo-button" onClick={handleAddTodoItem}>Add Todo</button>
+        <p>Click on the "To-Do" button to update the status of your task.</p>
       </div>
     </>
   );

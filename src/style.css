@@ -16,7 +16,12 @@ body {
     backdrop-filter: blur(20px);
     border-radius: 10px;
 }
-
+.container p{
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 2;
+}
 .todo-item {
     display: flex;
     justify-content: space-between;

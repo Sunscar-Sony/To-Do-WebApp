@@ -71,6 +71,7 @@ const TodoItem = (props) => {
     };
 
     return (
+      <>
         <li className="todo-item">
             <span>
                 {isEditing ? (
@@ -94,6 +95,7 @@ const TodoItem = (props) => {
                 <button className={buttonClass} onClick={handleStatusChange}>{buttonText}</button>
             </span>
         </li>
+      </>
     );
 }
 
