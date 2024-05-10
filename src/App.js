@@ -13,33 +13,10 @@ const App = () => {
     DONE: 2
   });
 
-  const TodoList = {
-    1: {
-      title: "Wake Up",
-      status: Status.TODO,
-    },
-    2: {
-      title: "Exercise",
-      status: Status.IN_PROGRESS,
-    },
-    3: {
-      title: "Get Ready",
-      status: Status.DONE,
-    },
-    4: {
-      title: "Go to office",
-      status: Status.DONE,
-    },
-    5: {
-      title: "Lunch",
-      status: Status.DONE,
-    }
-  };
-
-  const [todoList, setTodoList] = useState(TodoList);
+  const [todoList, setTodoList] = useState([]);
   const [isAddTodoEnabled, setIsAddTodoEnabled] = useState(false);
 
-  const handleAddTodoItem = (event) => {
+  const handleAddTodoItem = () => {
     setIsAddTodoEnabled(true);
   };
 
@@ -49,16 +26,16 @@ const App = () => {
 
   const handleAddTodo = (newTodoTitle) => {
     const newTodo = {
-      id: Math.max(...Object.keys(todoList)) + 1, // Generate a unique ID
+      id: todoList.length + 1, // Generate a unique ID
       title: newTodoTitle,
       status: Status.TODO, // Set default status
     };
-    setTodoList((prevTodoList) => ({ ...prevTodoList, [newTodo.id]: newTodo }));
+    setTodoList([...todoList, newTodo]);
+    setIsAddTodoEnabled(false); // Close the add todo form
   };
 
   const handleDeleteToDo = (id) => {
-    const updatedTodoList = { ...todoList };
-    delete updatedTodoList[id]; // Remove the item with the matching id
+    const updatedTodoList = todoList.filter(todo => todo.id !== id);
     setTodoList(updatedTodoList);
   }
 
@@ -66,9 +43,9 @@ const App = () => {
     <>
       <div className='container'>
         <Header></Header>
-        {/* Loop through the todoList object and populate TodoItem components */}
-        {Object.entries(todoList).map(([id, todo]) => (
-          todo.title.length > 0 && <TodoItem key={id} id={id} status={todo.status} text={todo.title} onDeleteTodo={handleDeleteToDo} />
+        {/* Loop through the todoList array and populate TodoItem components */}
+        {todoList.map((todo) => (
+          <TodoItem key={todo.id} id={todo.id} status={todo.status} text={todo.title} onDeleteTodo={handleDeleteToDo} />
         ))}
         <AddTodo isAddTodoEnabled={isAddTodoEnabled} onSaveTodo={handleAddTodo} onDiscardTodo={handleDiscardTodo}></AddTodo>
         <button className="todo-button" onClick={handleAddTodoItem}>Add Todo</button>
@@ -78,3 +55,4 @@ const App = () => {
 }
 
 export default App;
+

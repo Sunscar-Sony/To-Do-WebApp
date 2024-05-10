@@ -1,5 +1,7 @@
 body {
-    background-color: #191919;
+    background-image: url(/public/assets/wickedbackground.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +12,8 @@ body {
     width: 600px;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
-    background-color: #DDE6ED;
+    background-color: #ffffff47;
+    backdrop-filter: blur(20px);
     border-radius: 10px;
 }
 
@@ -22,11 +25,15 @@ body {
 }
 
 .todo-button {
+    color: white;
+    font-size: 16px;
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 10px;
+    border: none;
+    background-color: rgb(98, 38, 157);
 }
 
 .status-todo {
@@ -76,3 +83,12 @@ body {
     outline: none;
     padding: 5px;
 }
+.todo-item input{
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(240, 248, 255, 0.635);
+}
+input::placeholder {
+    font-size: 14px;
+    padding-left: 5px;
+  }

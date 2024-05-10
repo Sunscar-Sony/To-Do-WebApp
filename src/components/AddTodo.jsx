@@ -28,6 +28,7 @@ const AddTodo = (props) => {
           <input
             className="todo-item-title"
             type="text"
+            placeholder='Enter Task'
             value={title}
             onChange={handleInputChange}
           />
