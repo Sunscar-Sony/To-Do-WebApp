@@ -1,5 +1,5 @@
 body {
-    background-color: #191919;
+    background-color: #fee440;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,8 +10,10 @@ body {
     width: 600px;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
-    background-color: #DDE6ED;
+    background-color: #ffffff5c;
+    backdrop-filter: blur(10px);
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(36, 36, 36, 0.829);
 }
 
 .todo-item {
