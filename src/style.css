@@ -96,5 +96,5 @@ body {
 }
 input::placeholder {
     font-size: 14px;
-    padding-left: 5px;
+    padding-left: 10px;
   }
