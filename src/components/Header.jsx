@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <h1 className="header">Your Todo</h1>
+        <h1 className="header">Todo</h1>
     );
 }
 
