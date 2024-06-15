@@ -69,7 +69,7 @@ const TodoItem = (props) => {
     const handleDeleteClick = () => {
         props.onDeleteTodo(props.id);
     };
-
+    {/* Returning the main Element */}
     return (
       <>
         <li className="todo-item">
