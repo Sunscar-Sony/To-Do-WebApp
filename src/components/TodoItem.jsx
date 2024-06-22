@@ -23,7 +23,7 @@ const TodoItem = (props) => {
     
       const [buttonClass, setButtonClass] = useState(() => `status-${buttonText.toLowerCase()}`);
     
-      const [status, setStatus] = useState(props.status); // Initial status from props
+      const [status, setStatus] = useState(props.status); 
     
       const handleStatusChange = () => {
         const newStatus = (status + 1) % 3;
